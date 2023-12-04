@@ -1,0 +1,49 @@
+.gamebar {
+  padding: 15px 15px 15px 25px;
+  background-color: var(--bgMain);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gamebar-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.ignore,
+.follow {
+  border: 1px solid rgba(118, 128, 140, 0.2);
+  background-color: transparent;
+  color: var(--textMain);
+  height: 44px;
+  padding-inline: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: 0.3s all;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.generic {
+  background-color: var(--bgHighlight);
+  border-radius: 3px;
+  padding-inline: 15px;
+  border: none;
+  outline: none;
+  color: var(--textMain);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+
+.generic:hover,
+.follow:hover,
+.ignore:hover {
+  background: #313843;
+}

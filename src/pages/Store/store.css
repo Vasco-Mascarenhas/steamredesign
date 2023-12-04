@@ -1,0 +1,13 @@
+#store {
+  background: linear-gradient(
+    180deg,
+    #040011 13.77%,
+    #202b3c 27.29%,
+    #202b3c 27.29%
+  );
+}
+
+.store-nav {
+  width: 100%;
+  background-color: var(--bgTertiary);
+}

@@ -1,0 +1,32 @@
+#home {
+  padding-bottom: 50px;
+  background-image: url("/assets/home/leaves.gif");
+}
+#home h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.home-hero {
+  background-image: url("/assets/home/hero_autumn.gif");
+  min-height: 75vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.home-featured {
+  margin-bottom: 70px;
+}
+
+.steam_deck {
+  margin-block: 50px;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.steam_deck img {
+  width: 100%;
+}

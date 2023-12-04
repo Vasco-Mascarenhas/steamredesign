@@ -1,0 +1,39 @@
+.subnav {
+  display: flex;
+  min-height: 55px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subnav ul {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sub-links a.active {
+  background-color: var(--colorSecondary);
+}
+.sub-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.sublink {
+  padding: 8px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: 0.3s all;
+}
+
+.sublink:hover {
+  background-color: var(--colorSecondary);
+}
+
+.sub-search {
+  width: 100%;
+  max-width: 25%;
+}

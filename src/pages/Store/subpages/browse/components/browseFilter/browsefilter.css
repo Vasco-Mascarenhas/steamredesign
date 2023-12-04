@@ -1,0 +1,95 @@
+.browsefilter {
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+
+  background-color: var(--bgMain);
+}
+
+.browsefilter .browse-genres #genres-input {
+  height: 44px;
+  background-color: var(--bgSecondary);
+  border: none;
+  outline: none;
+  color: var(--textMain);
+  font-family: "Motiva Sans";
+  padding-inline: 5px;
+  width: 100%;
+  background-image: url("/assets/constants/searchWhite.png");
+  background-size: 7%;
+  background-position: 98% center;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
+
+.browsefilter .browse-genres #genres-input::placeholder {
+  color: var(--colorSecondary);
+  font-family: "Motiva Sans";
+  font-weight: bold;
+}
+
+.browsefilter .browse-genres .genres-list ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 95px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+.browse-genres .genres-list ul.genres-more-enabled {
+  max-height: 500px;
+  transition: max-height 0.5s ease-in;
+}
+
+.browse-genres .genres-list .genre {
+  padding-inline: 10px;
+  transition: 0.3s all;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.browse-genres .genres-list .genre:hover {
+  background-color: var(--bgHover);
+}
+
+.genres-more {
+  background: transparent;
+  outline: none;
+  border: none;
+  color: var(--textDim);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.genres-more:hover {
+  color: var(--textMain);
+}
+
+.selectedGenres {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.selectedGenres button {
+  background-color: var(--bgHover);
+  border: none;
+  outline: none;
+  color: var(--textMain);
+  padding: 8px 13px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.selectedGenres span {
+  color: var(--textDim);
+  cursor: pointer;
+}

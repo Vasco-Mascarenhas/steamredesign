@@ -1,0 +1,116 @@
+.gameintro-inner {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+
+.gameintro-slider {
+  width: 70%;
+}
+
+.gameintro-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gameintro-description p {
+  margin: 0;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.gameintro-details img {
+  width: 100%;
+  border-radius: 3px;
+}
+
+.gameintro span {
+  color: gray;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.gameintro h4 {
+  margin: 0;
+  font-size: 14px;
+  color: var(--colorPrimary);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.gameintro-rating-total {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+}
+
+.gameintro .gameintro-ratings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.gameintro-ratings .rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-transform: capitalize;
+  width: 49%;
+  flex-wrap: wrap;
+}
+
+.gameintro-ratings .rating p {
+  margin: 0;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.gameintro-release {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.gameintro-developer {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.gameintro-publisher {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.gameintro-tags {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.gameintro-tags-container {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.gameintro-tag {
+  padding: 8px 13px;
+  background-color: var(--bgHighlight);
+  border-radius: 3px;
+}

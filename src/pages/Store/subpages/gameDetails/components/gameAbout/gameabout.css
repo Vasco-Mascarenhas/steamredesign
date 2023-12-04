@@ -1,0 +1,17 @@
+.game-about {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.game-about-img {
+  width: 100%;
+}
+.game-about-img img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.game-about-description {
+  white-space: pre-line;
+}

@@ -1,0 +1,56 @@
+.buy {
+  width: 122px;
+  height: 44px;
+  background-color: var(--colorSecondary);
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  color: var(--textMain);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+
+.addtocart {
+  width: 122px;
+  height: 44px;
+  background-color: var(--colorSecondary);
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  color: var(--textMain);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+
+.buy:hover,
+.addtocart:hover {
+  background: var(--colorPrimary);
+}
+
+.wishlistBtn {
+  width: 122px;
+  height: 44px;
+  background-color: var(--bgHighlight);
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  color: var(--textMain);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+
+.wishlistBtn:hover {
+  background: #313843;
+}

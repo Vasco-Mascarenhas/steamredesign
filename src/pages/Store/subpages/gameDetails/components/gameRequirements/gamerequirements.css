@@ -1,0 +1,48 @@
+.requirements-selection {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.selection-buttons {
+  display: flex;
+  gap: 10px;
+}
+.selection-btn {
+  height: 44px;
+  min-width: 100px;
+  background-color: var(--bgHighlight);
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  color: var(--textMain);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+
+.selection-btn:hover {
+  background-color: #313843;
+}
+
+.active-selection {
+  background-color: #313843;
+}
+
+.game-requirements-content {
+  width: 100%;
+}
+.requirement {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.requirement p {
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  white-space: pre-line;
+}

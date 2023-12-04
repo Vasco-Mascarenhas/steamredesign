@@ -1,0 +1,7 @@
+.game-slider img {
+  width: 100%;
+  border-radius: 5px;
+}
+.game-slider .swiper-slide {
+  cursor: pointer;
+}

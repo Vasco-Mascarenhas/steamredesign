@@ -1,0 +1,106 @@
+.mySwiper {
+  margin-block: 30px;
+}
+.mySwiper .featured-inner {
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.mySwiper .featured-inner:hover .featured-content {
+  bottom: 0%;
+  opacity: 1;
+}
+
+.mySwiper .featured-inner:hover .featured-hero img {
+  scale: 1.1;
+}
+
+.featured-hero {
+  width: 100%;
+
+  display: flex;
+}
+
+.featured-hero img {
+  width: 100%;
+
+  border-radius: 3px;
+  transition: scale 0.3s;
+}
+
+.featured-content {
+  transition: bottom 0.6s, opacity 0.5s;
+  background-color: var(--bgMainOpaque);
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  bottom: -100%;
+  padding: 15px;
+  opacity: 0;
+}
+
+.featured-gallery {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.featured-gallery .short-img {
+  width: 32%;
+}
+
+.featured-gallery .short-img img {
+  width: 100%;
+
+  border-radius: 3px;
+}
+
+.featured-genres {
+  display: flex;
+  gap: 5px;
+}
+
+.featured-genres .featured-genre {
+  font-size: 12px;
+  padding: 8px 12px;
+  background-color: var(--bgHighlight);
+  border-radius: 3px;
+}
+
+.featured-platforms {
+  display: flex;
+  gap: 5px;
+}
+
+.featured-platform {
+  display: flex;
+  align-items: center;
+}
+
+.featured-platform img {
+  width: 100%;
+  aspect-ratio: initial;
+  width: 20px;
+}
+
+.featured-price {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.featured-buy {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}

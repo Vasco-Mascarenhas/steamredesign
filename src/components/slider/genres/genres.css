@@ -1,0 +1,25 @@
+.genre-inner {
+  border-radius: 5px;
+  width: 100%;
+  height: 240px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.genre-hero {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.genre-hero h3 {
+  font-weight: 400;
+}
+
+.mySwiper-trending {
+  border-radius: 5px;
+}

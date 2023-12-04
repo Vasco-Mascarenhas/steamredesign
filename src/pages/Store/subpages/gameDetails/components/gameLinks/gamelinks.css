@@ -1,0 +1,37 @@
+.game-links ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+}
+
+.game-links li {
+  background-color: var(--bgHighlight);
+  padding: 8px 20px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 3px;
+}
+
+.game-links-buttons {
+  margin-top: 7px;
+  display: flex;
+  gap: 5px;
+}
+
+.game-links-buttons button {
+  width: 100%;
+  background-color: var(--bgHighlight);
+  border: none;
+  outline: none;
+  height: 34px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--textMain);
+}

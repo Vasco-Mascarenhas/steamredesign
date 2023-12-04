@@ -1,0 +1,66 @@
+.browsebar {
+  width: 100%;
+  background-color: var(--bgMain);
+  min-height: 56px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-inline: 15px;
+  color: var(--textDim);
+}
+
+.view-toggle {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.view-selector {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+}
+
+.view-selector > div {
+  display: flex;
+  align-items: center;
+}
+
+.view-selector svg {
+  width: 30px;
+}
+
+.tab-selection .tabs {
+  display: flex;
+  list-style-type: none;
+  gap: 10px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.tabs button {
+  padding: 7px 15px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--textDim);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+  transition: 0.3s all;
+  border-radius: 5px;
+}
+
+.tabs button:hover {
+  color: white;
+  background-color: var(--bgHighlight);
+}
+
+.tabs button.active {
+  color: white;
+  background-color: var(--bgHighlight);
+}

@@ -1,0 +1,15 @@
+.layout-header {
+  background-color: transparent;
+}
+
+.layout-navbar {
+  background-color: var(--bgMain);
+}
+
+.layout-subnav {
+  background-color: var(--bgTertiary);
+}
+
+.layout-footer {
+  background-color: var(--bgHighlight);
+}

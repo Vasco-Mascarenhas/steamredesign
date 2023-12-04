@@ -1,0 +1,11 @@
+export { default as Layout } from "./layout/Layout";
+export { default as NavBar } from "./navbar/NavBar";
+export { default as SubNav } from "./subnav/SubNav";
+export { default as Footer } from "./footer/Footer";
+export { default as Featured } from "./slider/featured/Featured";
+export { default as FreeGames } from "./slider/freeGames/FreeGames";
+export { default as Button } from "./buttons/Button";
+export { default as Trending } from "./slider/trending/Trending";
+export { default as Genres } from "./slider/genres/Genres";
+export { default as Loader } from "./loader/Loader";
+export { default as ScrollTop } from "./scrollTop/ScrollTop";

@@ -1,0 +1,31 @@
+#browse {
+  background-image: url("/assets/browse/background.png");
+  padding-block: 50px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#browse .swiper-pagination {
+  display: none !important;
+}
+
+#browse .browse-steam {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#browse .browse-game-container {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+
+.browse-filter {
+  width: 100%;
+  max-width: 300px;
+}
+
+.browse-games {
+  width: 100%;
+}

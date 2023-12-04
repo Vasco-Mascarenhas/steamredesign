@@ -1,0 +1,72 @@
+.game-price {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-price-name p {
+  margin: 0;
+  color: var(--colorPrimary);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.game-price-details {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.price-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-details .price-discount {
+  width: 74px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--green);
+  color: black;
+  font-weight: bold;
+  border-radius: 3px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 18px;
+}
+
+.price-new {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-new .old-price {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.price-new .new-price {
+  color: var(--green);
+}
+
+.game-price-platform {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.price-platform {
+  width: 20px;
+  display: flex;
+}
+
+.price-platform img {
+  width: 100%;
+}

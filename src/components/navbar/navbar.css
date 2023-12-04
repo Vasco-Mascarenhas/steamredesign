@@ -1,0 +1,37 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  min-height: 60px;
+  gap: 66px;
+  align-items: center;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+.navbar ul {
+  display: flex;
+  gap: 66px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar a.active {
+  color: var(--colorPrimary);
+}
+.navbar li {
+  text-transform: uppercase;
+}
+
+.navlink {
+  transition: 0.3s all;
+}
+
+.navbar .navlink:hover {
+  color: var(--colorPrimary);
+}
