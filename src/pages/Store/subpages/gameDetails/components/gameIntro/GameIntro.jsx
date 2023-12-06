@@ -24,13 +24,13 @@ const GameIntro = ({ game }) => {
           </p>
         </div>
         <div className="gameintro-rating">
-          <div className="gameintro-rating-total">
+          <div className="rating-total">
             <span>Rating</span>
             <h4>
               {game.rating} / {game.rating_top}
             </h4>
           </div>
-          <div className="gameintro-ratings">
+          <div className="ratings">
             {game.ratings.map((rating) => (
               <div className="rating" key={rating.id}>
                 <p>{rating.title}:</p> <span>{rating.percent}%</span>

@@ -2,34 +2,123 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap:15px;
+}
+
+.browse-container a {
+  text-decoration: none;
+  color:var(--textMain);
 }
 
 .browse-game {
   width: 100%;
   display: flex;
+  background-color: var(--bgMain);
+  padding:15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.browse-game-meta h4 {
+  margin: 0; 
+  line-height: normal;
 }
 
 .browse-game-image {
-  max-width: 200px;
+  max-width: 300px;
+  width:100%;
+  display:flex;
 }
 .browse-game-image img {
   width: 100%;
   aspect-ratio: 16/9;
+  border-radius:5px;
 }
 
 .browse-game-body {
   display: flex;
+  width:100%;
+  padding-left:15px;
+  justify-content: space-between;
 }
 
 .browse-game-meta {
   display: flex;
   flex-flow: column;
+  gap:5px;
 }
 
-.browse-game-genres {
-  display: flex;
+.browse-game .ratings {
+  margin-top:5px;
 }
 
-.browse-game-platforms {
+.browse-game-release {
   display: flex;
+}
+.browse-game-release span {
+  line-height: normal;
+  color: var(--textDim);
+}
+
+.browse-game-cart {
+  display:flex;
+  width:30%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  height:100%;
+}
+.browse-game-cart svg {
+  cursor: pointer;
+}
+.browse-game-cart svg:hover path:first-child {
+  fill:white;
+  transition:0.2s fill ease-in-out;
+  cursor: pointer;
+}
+
+.browse-game-cart .browse-addtocart span {
+  font-weight:bold;
+}
+
+.browse-game-cart .browse-addtocart {
+  display:flex;
+  align-items: center;
+  gap:10px;
+}
+
+.browse-container .page-selection {
+  display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+}
+
+.page-selection .selection-button {
+  border:none;
+  outline:none;
+  background-color: var(--bgHighlight);
+  width:80px;
+  height:30px;
+  color:var(--textMain);
+  cursor: pointer;
+  border-radius: 3px;
+}
+.page-selection .selection-button:hover {
+  background-color:var(--bgHover);
+  transition: 0.2s ease-in-out;
+}
+
+
+.page-selection .inactivePage {
+  border:none;
+  outline:none;
+  background-color: var(--bgHighlight);
+  width:80px;
+  height:30px;
+  color:var(--textMain);
+  cursor: pointer;
+  border-radius: 3px;
+  opacity:0.2;
 }

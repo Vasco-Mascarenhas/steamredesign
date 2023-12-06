@@ -187,4 +187,65 @@ img {
 
 .platforms .platform {
   width: 20px;
+  display:flex;
+}
+
+.ratings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-transform: capitalize;
+  width: 49%;
+  flex-wrap: wrap;
+}
+
+.rating span {
+  color: gray;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.rating p {
+  margin: 0;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.rating-total h4 {
+  margin: 0;
+  font-size: 14px;
+  color: var(--colorPrimary);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.rating-total {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+}
+
+.tags-container {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 8px 13px;
+  background-color: var(--bgHighlight);
+  border-radius: 3px;
 }

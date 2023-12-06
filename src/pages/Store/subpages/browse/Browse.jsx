@@ -14,6 +14,23 @@ const Browse = () => {
   const handleGenreSelection = (genre) => {
     setSelectedGenre(genre);
   };
+
+  const tabs = [
+    {text: "All Items", value: "-metacritic"},
+    {text: "New and Trending", value:"released"},
+    {text: "Top Sellers", value:"updated"},
+    {text: "Top Rated", value: "-rating"},
+    {text: "Popular", value: "popular"},
+    {text: "Coming Soon", value:"-released"}
+  ]
+
+  console.log(selectedTab)
+
+  const ordering = tabs?.find(tabz =>  {
+    if(tabz.text === selectedTab) {
+     return tabz
+    }
+  })
   return (
     <div id="browse">
       <div className="browse-inner inner-container">
@@ -32,7 +49,7 @@ const Browse = () => {
             </aside>
             <div className="browse-games">
               <BrowseContainer
-                tab={selectedTab}
+                tab={ordering}
                 selectedGenre={selectedGenre}
               />
             </div>

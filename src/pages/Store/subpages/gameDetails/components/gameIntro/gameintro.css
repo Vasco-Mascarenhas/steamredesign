@@ -36,6 +36,7 @@
   line-height: normal;
 }
 
+
 .gameintro h4 {
   margin: 0;
   font-size: 14px;
@@ -45,36 +46,6 @@
   line-height: normal;
 }
 
-.gameintro-rating-total {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  align-items: center;
-}
-
-.gameintro .gameintro-ratings {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-top: 10px;
-}
-
-.gameintro-ratings .rating {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  text-transform: capitalize;
-  width: 49%;
-  flex-wrap: wrap;
-}
-
-.gameintro-ratings .rating p {
-  margin: 0;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
 
 .gameintro-release {
   display: flex;
