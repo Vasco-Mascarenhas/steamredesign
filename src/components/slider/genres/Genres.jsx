@@ -34,7 +34,7 @@ const Genres = () => {
       {isLoading ? (
         <p>Loading</p>
       ) : (
-        data.results.map((genre, index) => (
+        data.map((genre, index) => (
           <SwiperSlide key={genre.id}>
             <div
               className="genre-inner"

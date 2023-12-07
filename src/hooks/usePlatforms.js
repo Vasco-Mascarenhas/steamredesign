@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-const fetchGenres = async (link) => {
+const fetchPlatforms = async (link) => {
   const response = await fetch(link);
 
   if (!response.ok) {
@@ -10,16 +10,16 @@ const fetchGenres = async (link) => {
   return response.json();
 };
 
-export function useGenres() {
-  const queryKey = ["Genres"];
+export function usePlatforms() {
+  const queryKey = ["Platforms"];
   const a76a7dts87ad5s6a8dstd6as8 = "bdcc71c674f54475a3252f21f433fb32";
   return useQuery({
     queryKey,
     queryFn: async () => {
-      const apiUrl = `https://api.rawg.io/api/genres?&key=${a76a7dts87ad5s6a8dstd6as8}`;
+      const apiUrl = `https://api.rawg.io/api/platforms?key=${a76a7dts87ad5s6a8dstd6as8}`;
 
-      const genres = await fetchGenres(apiUrl);
-      return genres.results;
+      const platforms = await fetchPlatforms(apiUrl);
+      return platforms.results;
     },
     staleTime: Infinity,
   });

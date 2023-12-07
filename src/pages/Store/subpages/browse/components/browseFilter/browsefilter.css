@@ -9,9 +9,14 @@
   background-color: var(--bgMain);
 }
 
-.browsefilter .browse-genres #genres-input {
+.browse-filter h4 {
+  margin:5px 0;
+}
+
+
+.browse-platforms #platforms-input {
   height: 44px;
-  background-color: var(--bgSecondary);
+  background-color: rgba(33, 43, 69, 20%);
   border: none;
   outline: none;
   color: var(--textMain);
@@ -25,38 +30,39 @@
   border-radius: 5px;
 }
 
-.browsefilter .browse-genres #genres-input::placeholder {
+.browse-platforms #platforms-input::placeholder {
   color: var(--colorSecondary);
   font-family: "Motiva Sans";
-  font-weight: bold;
 }
 
-.browsefilter .browse-genres .genres-list ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
+.platforms-list ul {
+  display:flex;
   flex-direction: column;
-  max-height: 95px;
+  gap:5px;
+  margin:0;
+  padding:0;
+  max-height: 120px;
   overflow: hidden;
   transition: max-height 0.5s ease-out;
 }
-.browse-genres .genres-list ul.genres-more-enabled {
-  max-height: 500px;
-  transition: max-height 0.5s ease-in;
-}
 
-.browse-genres .genres-list .genre {
-  padding-inline: 10px;
-  transition: 0.3s all;
-  cursor: pointer;
-  border-radius: 3px;
+.platforms-list .browse-platform {
+  display:flex;
+  align-items: center;
+  gap:5px;
+  padding: 3px 10px;
+    transition: 0.3s all;
+    cursor: pointer;
+    border-radius: 3px;
 }
-
-.browse-genres .genres-list .genre:hover {
+.platforms-list .browse-platform:hover {
   background-color: var(--bgHover);
 }
+.platforms-list .browse-platform img{
+  width:20px;
+}
 
-.genres-more {
+.platforms-more {
   background: transparent;
   outline: none;
   border: none;
@@ -64,32 +70,34 @@
   cursor: pointer;
   transition: color 0.3s;
 }
-.genres-more:hover {
-  color: var(--textMain);
+
+.platforms-list ul.platforms-more-enabled {
+  max-height: 2000px;
+  transition: max-height 0.5s ease-in;
 }
 
-.selectedGenres {
+.selectedPlatforms {
   width: 100%;
-  display: flex;
-  gap: 5px;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 10px;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-.selectedGenres button {
+.selectedPlatforms button {
   background-color: var(--bgHover);
-  border: none;
-  outline: none;
-  color: var(--textMain);
-  padding: 8px 13px;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    border: none;
+    outline: none;
+    color: var(--textMain);
+    padding: 8px 13px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.selectedGenres span {
+.selectedPlatforms span {
   color: var(--textDim);
-  cursor: pointer;
+    cursor: pointer;
 }

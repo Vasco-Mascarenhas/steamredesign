@@ -5,11 +5,12 @@ import { getCroppedImg } from "../../../../../../helpers/getCroppedImg";
 import Button from "../../../../../../components/buttons/Button"
 import { useGameContext } from "../../../../../../contexts/selectedGame";
 import { Link } from "react-router-dom";
-const BrowseContainer = ({ tab, selectedGenre }) => {
+const BrowseContainer = ({ tab, selectedGenre, selectedPlatform }) => {
   const {setSelectedGame} = useGameContext()
   const [currentPage, setCurrentPage] = useState(1)
   const { data, isLoading, error } = useBrowseGames({
     genres: selectedGenre,
+    platforms: selectedPlatform,
     ordering:tab?.value,
     currentPage: currentPage
   });
@@ -17,7 +18,6 @@ const BrowseContainer = ({ tab, selectedGenre }) => {
     if(action === "Next") return setCurrentPage(prev => prev + 1)
     if(action === "Previous" && currentPage > 1) return setCurrentPage(prev => prev - 1)
   }
-
 
   useEffect(() => {
     setCurrentPage(1);

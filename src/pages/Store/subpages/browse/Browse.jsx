@@ -7,6 +7,7 @@ import BrowseFilter from "./components/browseFilter/BrowseFilter";
 const Browse = () => {
   const [selectedTab, setSelectedTab] = useState(null);
   const [selectedGenre, setSelectedGenre] = useState(null);
+  const [selectedPlatform, setSelectedPlatform] = useState(null)
   const handleSelectedTab = (tab) => {
     setSelectedTab(tab);
   };
@@ -14,6 +15,10 @@ const Browse = () => {
   const handleGenreSelection = (genre) => {
     setSelectedGenre(genre);
   };
+
+  const handlePlatformSelection = (platform) => {
+      setSelectedPlatform(platform)
+  }
 
   const tabs = [
     {text: "All Items", value: "-metacritic"},
@@ -24,7 +29,7 @@ const Browse = () => {
     {text: "Coming Soon", value:"-released"}
   ]
 
-  console.log(selectedTab)
+  console.log(selectedPlatform)
 
   const ordering = tabs?.find(tabz =>  {
     if(tabz.text === selectedTab) {
@@ -45,12 +50,13 @@ const Browse = () => {
           </div>
           <div className="browse-game-container">
             <aside className="browse-filter">
-              <BrowseFilter genreSelected={handleGenreSelection} />
+              <BrowseFilter genreSelected={handleGenreSelection} platformSelected={handlePlatformSelection} />
             </aside>
             <div className="browse-games">
               <BrowseContainer
                 tab={ordering}
                 selectedGenre={selectedGenre}
+                selectedPlatform={selectedPlatform}
               />
             </div>
           </div>
