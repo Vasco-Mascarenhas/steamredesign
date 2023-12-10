@@ -8,6 +8,8 @@ const Browse = () => {
   const [selectedTab, setSelectedTab] = useState(null);
   const [selectedGenre, setSelectedGenre] = useState(null);
   const [selectedPlatform, setSelectedPlatform] = useState(null)
+  const [selectedDeveloper, setSelectedDeveloper] = useState(null)
+  const [selectedPublisher, setSelectedPublisher] = useState(null)
   const handleSelectedTab = (tab) => {
     setSelectedTab(tab);
   };
@@ -20,6 +22,14 @@ const Browse = () => {
       setSelectedPlatform(platform)
   }
 
+  const handleDeveloperSelection = (developer) => {
+    setSelectedDeveloper(developer)
+  }
+
+  const handlePublisherSelection = (publisher) => {
+      setSelectedPublisher(publisher)
+  }
+
   const tabs = [
     {text: "All Items", value: "-metacritic"},
     {text: "New and Trending", value:"released"},
@@ -29,13 +39,15 @@ const Browse = () => {
     {text: "Coming Soon", value:"-released"}
   ]
 
-  console.log(selectedPlatform)
+  console.log(selectedDeveloper)
 
   const ordering = tabs?.find(tabz =>  {
     if(tabz.text === selectedTab) {
      return tabz
     }
   })
+
+  
   return (
     <div id="browse">
       <div className="browse-inner inner-container">
@@ -50,13 +62,20 @@ const Browse = () => {
           </div>
           <div className="browse-game-container">
             <aside className="browse-filter">
-              <BrowseFilter genreSelected={handleGenreSelection} platformSelected={handlePlatformSelection} />
+              <BrowseFilter
+               genreSelected={handleGenreSelection}
+              platformSelected={handlePlatformSelection}  
+              developerSelected={handleDeveloperSelection}
+              publisherSelected={handlePublisherSelection}
+              />
             </aside>
             <div className="browse-games">
               <BrowseContainer
                 tab={ordering}
                 selectedGenre={selectedGenre}
                 selectedPlatform={selectedPlatform}
+                selectedDeveloper={selectedDeveloper}
+                selectedPublisher={selectedPublisher}
               />
             </div>
           </div>

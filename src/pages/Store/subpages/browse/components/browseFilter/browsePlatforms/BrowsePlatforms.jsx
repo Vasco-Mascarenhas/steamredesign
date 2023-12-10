@@ -53,7 +53,7 @@ const handlePlatformClear = () => {
     />
     <hr />
     <div
-      className={`selectedPlatforms ${selectedPlatform === null ? "none" : ""}`}
+      className={`selected-items ${selectedPlatform === null ? "none" : ""}`}
     >
       {selectedPlatform?.map((platform) => (
         <button className="small" key={platform.id}>
@@ -68,31 +68,35 @@ const handlePlatformClear = () => {
         ""
       )}
     </div>
-    <div className="platforms-list">
-      <ul className={platformsMore ? "platforms-more-enabled" : ""}>
+    <div className="items-list">
+      <ul className={platformsMore ? "more-enabled-platforms " : "max-height"}>
         {searchedPlatform ? (
           platforms?.filter(plat => plat.name.toLowerCase().includes(searchedPlatform.toLowerCase())).map(platform => (
-            <div className="browse-platform" key={platform.name} onClick={() => handlePlatformClick(platform)}>
+            <li  key={platform.name}>
+              <div className="item" onClick={() => handlePlatformClick(platform)}>
               <img src={`/assets/platforms/${platform.slug}.png`} alt="platform" />
                 <span className="small">{platform.name}</span>
             </div>
+            </li>
           ))
         ) : (
           platforms?.map(platform => (
-            <div className="browse-platform" key={platform.name} onClick={() => handlePlatformClick(platform)}>
+            <li  key={platform.name}>
+              <div className="item" onClick={() => handlePlatformClick(platform)}>
               <img src={`/assets/platforms/${platform.slug}.png`} alt="platform" />
                 <span className="small">{platform.name}</span>
             </div>
+            </li>
           ))
         )}
       </ul>
       <div className="platforms-see">
         {platformsMore ? (
-          <button className="platforms-more small" onClick={handlePlatformsMore}>
+          <button className="more-button small" onClick={handlePlatformsMore}>
             See Less
           </button>
         ) : (
-          <button className="platforms-more small" onClick={handlePlatformsMore}>
+          <button className="more-button small" onClick={handlePlatformsMore}>
             See More
           </button>
         )}

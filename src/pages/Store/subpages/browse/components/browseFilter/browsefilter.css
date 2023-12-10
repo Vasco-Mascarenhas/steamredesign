@@ -9,12 +9,11 @@
   background-color: var(--bgMain);
 }
 
-.browse-filter h4 {
+.browsefilter h4 {
   margin:5px 0;
 }
 
-
-.browse-platforms #platforms-input {
+.browsefilter input {
   height: 44px;
   background-color: rgba(33, 43, 69, 20%);
   border: none;
@@ -29,40 +28,71 @@
   background-repeat: no-repeat;
   border-radius: 5px;
 }
-
-.browse-platforms #platforms-input::placeholder {
+.browsefilter input::placeholder {
   color: var(--colorSecondary);
   font-family: "Motiva Sans";
 }
 
-.platforms-list ul {
-  display:flex;
+.browsefilter ul {
+  margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.browsefilter ul.max-height {
+  margin: 0;
+  padding: 0;
+  display: flex;
   flex-direction: column;
-  gap:5px;
-  margin:0;
-  padding:0;
-  max-height: 120px;
+  max-height: 95px;
   overflow: hidden;
   transition: max-height 0.5s ease-out;
 }
 
-.platforms-list .browse-platform {
+.browsefilter ul.more-enabled {
+  max-height: 500px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in;
+}
+
+.browsefilter ul.more-enabled-platforms {
+  max-height: 1200px;
+  transition: max-height 0.5s ease-in;
+  overflow: hidden;
+}
+.browsefilter ul li {
   display:flex;
   align-items: center;
-  gap:5px;
-  padding: 3px 10px;
+  width:100%;
+}
+
+.browsefilter ul li .item {
+  width: 100%;
+    padding-inline: 10px;
     transition: 0.3s all;
     cursor: pointer;
     border-radius: 3px;
+    display: flex;
+    height: 24px;
+    align-items: center;
+    gap: 5px;
 }
-.platforms-list .browse-platform:hover {
+
+.browsefilter ul li .item:hover {
   background-color: var(--bgHover);
 }
-.platforms-list .browse-platform img{
+
+.browsefilter ul li .item .games-count {
+  color:var(--textDim);
+}
+
+.browsefilter ul li img {
   width:20px;
 }
 
-.platforms-more {
+
+.browsefilter .more-button {
   background: transparent;
   outline: none;
   border: none;
@@ -70,34 +100,32 @@
   cursor: pointer;
   transition: color 0.3s;
 }
-
-.platforms-list ul.platforms-more-enabled {
-  max-height: 2000px;
-  transition: max-height 0.5s ease-in;
+.browsefilter .more-button:hover {
+  color: var(--textMain);
 }
 
-.selectedPlatforms {
+.browsefilter .selected-items {
   width: 100%;
-    display: flex;
-    gap: 5px;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.selectedPlatforms button {
+.browsefilter .selected-items button {
   background-color: var(--bgHover);
-    border: none;
-    outline: none;
-    color: var(--textMain);
-    padding: 8px 13px;
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  border: none;
+  outline: none;
+  color: var(--textMain);
+  padding: 8px 13px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.selectedPlatforms span {
+.browsefilter .selected-items span {
   color: var(--textDim);
-    cursor: pointer;
+  cursor: pointer;
 }

@@ -5,12 +5,14 @@ import { getCroppedImg } from "../../../../../../helpers/getCroppedImg";
 import Button from "../../../../../../components/buttons/Button"
 import { useGameContext } from "../../../../../../contexts/selectedGame";
 import { Link } from "react-router-dom";
-const BrowseContainer = ({ tab, selectedGenre, selectedPlatform }) => {
+const BrowseContainer = ({ tab, selectedGenre, selectedPlatform, selectedDeveloper, selectedPublisher }) => {
   const {setSelectedGame} = useGameContext()
   const [currentPage, setCurrentPage] = useState(1)
   const { data, isLoading, error } = useBrowseGames({
     genres: selectedGenre,
     platforms: selectedPlatform,
+    developers: selectedDeveloper,
+    publishers: selectedPublisher,
     ordering:tab?.value,
     currentPage: currentPage
   });
@@ -26,7 +28,7 @@ const BrowseContainer = ({ tab, selectedGenre, selectedPlatform }) => {
   const handlePlatformError = (e) => {
     e.target.src = "/assets/constants/question.png"
   }
-
+console.log(selectedPublisher)
   
   if (isLoading) return <p>Loading</p>;
   if (error) return <p>Error</p>;

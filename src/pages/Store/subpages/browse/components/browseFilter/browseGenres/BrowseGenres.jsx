@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
 import { useGenres } from '../../../../../../../hooks/useGenres';
-import "./browsegenres.css"
 const BrowseGenres = ({genreSelected}) => {
     const { data: genres, isLoading, error } = useGenres();
     const [searchedGenre, setSearchedGenre] = useState(null);
@@ -53,7 +52,7 @@ const BrowseGenres = ({genreSelected}) => {
     />
     <hr />
     <div
-      className={`selectedGenres ${selectedGenre === null ? "none" : ""}`}
+      className={`selected-items ${selectedGenre === null ? "none" : ""}`}
     >
       {selectedGenre?.map((genre) => (
         <button className="small" key={genre}>
@@ -69,38 +68,41 @@ const BrowseGenres = ({genreSelected}) => {
       )}
     </div>
     <div className="genres-list">
-      <ul className={genresMore ? "genres-more-enabled" : ""}>
+      <ul className={genresMore ? "more-enabled" : "max-height"}>
         {isLoading ? (
           <p>Loading...</p>
         ) : searchedGenre ? (
           genres.filter(genres => genres.name.toLowerCase().includes(searchedGenre.toLowerCase())).map(genre => (
-            <div
-              className="genre"
-              key={genre.name}
+            <li  key={genre.name}>
+              <div
+              className="item"
+             
               onClick={() => handleGenreClick(genre.name)}
             >
               <span className="small">{genre.name}</span>
             </div>
+            </li>
           ))
         ) : (
           genres.map((genre) => (
-            <div
-              className="genre"
-              key={genre.name}
+            <li  key={genre.name}>
+              <div
+              className="item"
               onClick={() => handleGenreClick(genre.name)}
             >
               <span className="small">{genre.name}</span>
             </div>
+            </li>
           ))
         )}
       </ul>
       <div className="genres-see">
         {genresMore ? (
-          <button className="genres-more small" onClick={handleGenresMore}>
+          <button className="more-button small" onClick={handleGenresMore}>
             See Less
           </button>
         ) : (
-          <button className="genres-more small" onClick={handleGenresMore}>
+          <button className="more-button small" onClick={handleGenresMore}>
             See More
           </button>
         )}
