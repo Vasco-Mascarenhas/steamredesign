@@ -1,8 +1,10 @@
 import React from "react";
 import "./gameprice.css";
 import { Button } from "../../../../../../components";
+import { addToCart } from "../../../../../../helpers/cart";
 const GamePrice = ({ game, platforms }) => {
-  console.log(platforms);
+  console.log(game);
+
   return (
     <div className="game-price">
       <div className="game-price-name">
@@ -27,7 +29,7 @@ const GamePrice = ({ game, platforms }) => {
             <span className="new-price">$23.09</span>
           </div>
           <div className="price-cart">
-            <Button type="addtocart" text="Add to Cart" />
+            <Button type="addtocart" onBtnClick={() => addToCart(game) } text="Add to Cart" />
           </div>
         </div>
       </div>

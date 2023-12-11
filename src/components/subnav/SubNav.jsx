@@ -31,7 +31,9 @@ const SubNav = () => {
       <div className="cart">
         <ul>
           <li className="sublink">WishList</li>
+          <NavLink to="Cart">
           <li className="sublink">Cart</li>
+          </NavLink>
         </ul>
       </div>
     </nav>
