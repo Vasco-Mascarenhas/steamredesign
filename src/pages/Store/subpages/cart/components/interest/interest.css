@@ -1,0 +1,34 @@
+
+.interest-card {
+    background-color: var(--bgMain);
+    border-radius: 5px;
+    padding:15px;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.interest-card h4 {
+    margin:0;
+}
+.interest-card .interest-image {
+    width:100%;
+    display:flex;
+}
+
+.interest-card .interest-image img{
+    aspect-ratio: 16/9;
+    border-radius: 3px;
+}
+
+.interest-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.interest-price {
+    display:flex;
+    gap:10px;
+    align-items: center;
+}

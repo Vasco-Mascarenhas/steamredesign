@@ -1,10 +1,9 @@
 import React from "react";
 import "./gameprice.css";
 import { Button } from "../../../../../../components";
-import { addToCart } from "../../../../../../helpers/cart";
+import { useCart } from "../../../../../../context/cartContext";
 const GamePrice = ({ game, platforms }) => {
-  console.log(game);
-
+  const {addToCart} = useCart()
   return (
     <div className="game-price">
       <div className="game-price-name">

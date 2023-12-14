@@ -1,14 +1,23 @@
 import React, { useState } from 'react'
 import "./cart.css"
-import { clearCart, removeFromCart } from '../../../../helpers/cart'
+import { useCart } from '../../../../context/cartContext'
 import { getCroppedImg } from '../../../../helpers/getCroppedImg'
 import { Button } from '../../../../components'
-import { Navigate } from 'react-router-dom'
+import { useInterestIn } from '../../../../hooks/useInterestIn'
+import Interest from './components/interest/Interest'
 const Cart = () => {
+    const { cart, addToCart, removeFromCart, clearCart } = useCart();
     const [updateCart, setUpdateCart] = useState(null)
-    const cart = JSON.parse(localStorage.getItem("cart"))
-
-
+   const {data: interest, isLoading, error} = useInterestIn({
+    developer: 
+        cart &&
+    cart.length > 0 &&
+    cart[0].developers &&
+    cart[0].developers.length > 0
+      ? cart[0].developers[0].id
+      : 1612
+})
+  
     const handleClickremove = (item) => {
         removeFromCart(item)
         setUpdateCart(prev => !prev)
@@ -16,6 +25,11 @@ const Cart = () => {
 
     const handleCartClear = () => {
         clearCart()
+        setUpdateCart(prev => !prev)
+    }
+
+    const handleInterest = (game) => {
+        addToCart(game)
         setUpdateCart(prev => !prev)
     }
   return (
@@ -26,21 +40,25 @@ const Cart = () => {
             {
                 cart && cart.length > 0 ? (
                     cart.map(item => (
-                    <div className='cart-item' key={item.name}>
+                    <div className='cart-item' key={item.id}>
                       <div className="cart-item-image">
                         <img src={getCroppedImg(item.background_image)} alt="game image" />
                       </div>
                       <div className="cart-item-info">
                         <h4>{item.name}</h4>
                         <div className="platforms">
-                            {item.platforms.map(platform => (
-                                <div className="platform" key={platform.name}>
+                            {item.platforms.map((platform) => (
+                                <div className="platform" key={platform.platform.name}>
+                                    
                                     <img src={`/assets/platforms/${platform.platform.slug}.png`} alt={platform.name} />
                                 </div>
                             ))}
                         </div>
                       </div>    
                       <div className="cart-remove-item">
+                        <div className="cart-item-price">
+                            <span>40$</span>
+                        </div>
                         <button onClick={() => handleClickremove(item)}>
                             <img src="/assets/constants/delete.svg" alt="remove from cart" />
                         </button>
@@ -73,8 +91,17 @@ const Cart = () => {
             ) : ""}
 
         </div>
-        <div className="cart-dlcs">
-            dlcs
+        <div className="cart-interest">
+            {cart && cart.length > 0 ? (
+                <>
+                <h3>Games you might be interested in:</h3>
+                <div className="interest-container">
+                    {interest?.slice(1, (cart.length + 1)).map((games, index) => (
+                            <Interest game={games} onAddClick={handleInterest} key={index} />
+                        ))}
+                </div>
+                </>
+            ) : <h3>Nothing to display here...</h3>}
         </div>
         </div>
     </div>
