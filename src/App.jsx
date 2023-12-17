@@ -1,6 +1,7 @@
 import { Layout, ScrollTop } from "./components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Store from "./pages/Store/Store";
+import Vasco from "./pages/vasco/Vasco";
 import { Browse, GameDetails, Home, Cart } from "./pages/Store/subpages";
 import { CartProvider } from "./context/cartContext";
 import { SelectedGameProvider } from "./contexts/selectedGame";
@@ -21,6 +22,7 @@ function App() {
                 <Route path="gameDetails" element={<GameDetails />} />
                 <Route path="Cart" element={<Cart />} />
               </Route>
+              <Route path="/Vasco" element={<Vasco />} />
             </Routes>
             <ToastContainer
             position="bottom-right"
