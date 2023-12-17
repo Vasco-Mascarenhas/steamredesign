@@ -7,7 +7,7 @@ export const getCroppedImg = (originalImageUrl) => {
   }
   } else {
     // Handle the case where the original URL doesn't have "/media/"
-    console.error("No image provided, using fallback 404 image");
+    
     return "/assets/constants/404.png";
   }
 };

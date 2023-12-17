@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   gap:15px;
+  scroll-behavior: smooth;
 }
 
 .browse-container a {
@@ -16,7 +17,6 @@
   background-color: var(--bgMain);
   padding:15px;
   border-radius: 5px;
-  cursor: pointer;
 }
 
 
@@ -28,6 +28,9 @@
 .browse-game-image {
   max-width: 300px;
   width:100%;
+  display:flex;
+}
+.browse-game-image a {
   display:flex;
 }
 .browse-game-image img {

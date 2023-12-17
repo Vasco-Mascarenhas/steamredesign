@@ -34,8 +34,8 @@ const BrowsePublishers = ({publisherSelected}) => {
         <h4 className="large">Publishers</h4>
         <input 
     type="text"
-    name="plaforms"
-    id="platforms-input"
+    name="publishers"
+    id="publishers-input"
     placeholder="Search for a platform..."
     onChange={handlePublisherChange}
     />

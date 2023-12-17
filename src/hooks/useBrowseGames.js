@@ -20,7 +20,8 @@ export function useBrowseGames({ genres, platforms, developers, publishers, orde
       let apiUrl = `https://api.rawg.io/api/games?ordering=${ordering}&page_size=12&page=${currentPage}&key=${a76a7dts87ad5s6a8dstd6as8}`;
 
       if (genres && genres.length > 0) {
-        apiUrl += `&genres=${genres}`;
+        
+            apiUrl += `&genres=${genres}`;
       }
 
       if (platforms && platforms.length > 0) {

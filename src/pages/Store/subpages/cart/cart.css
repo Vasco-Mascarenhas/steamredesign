@@ -30,7 +30,7 @@
     padding:15px;
 }
 
-.cart-item-image {
+.cart-item-image a{
     width:160px;
     display:flex;
 }

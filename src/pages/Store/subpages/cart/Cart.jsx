@@ -5,8 +5,11 @@ import { getCroppedImg } from '../../../../helpers/getCroppedImg'
 import { Button } from '../../../../components'
 import { useInterestIn } from '../../../../hooks/useInterestIn'
 import Interest from './components/interest/Interest'
+import { Link } from 'react-router-dom'
+import { useGameContext } from '../../../../contexts/selectedGame'
 const Cart = () => {
     const { cart, addToCart, removeFromCart, clearCart } = useCart();
+    const {setSelectedGame} = useGameContext()
     const [updateCart, setUpdateCart] = useState(null)
    const {data: interest, isLoading, error} = useInterestIn({
     developer: 
@@ -42,10 +45,15 @@ const Cart = () => {
                     cart.map(item => (
                     <div className='cart-item' key={item.id}>
                       <div className="cart-item-image">
+                        <Link to="/gameDetails" onClick={() => setSelectedGame(item.id)}>
                         <img src={getCroppedImg(item.background_image)} alt="game image" />
+                        </Link>
+                        
                       </div>
                       <div className="cart-item-info">
+                        <Link to="/gameDetails" onClick={() => setSelectedGame(item.id)}>
                         <h4>{item.name}</h4>
+                        </Link>
                         <div className="platforms">
                             {item.platforms.map((platform) => (
                                 <div className="platform" key={platform.platform.name}>

@@ -1,0 +1,72 @@
+.game-placeholder {
+    height: 214px;
+    width: 100%;
+    display: flex;
+    background-color: var(--bgMain);
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden; /* Ensure overflow is hidden to hide the gradient overflow */
+}
+
+.game-image-placeholder {
+    width: 300px;
+    height: 184px;
+    position:relative;
+    background-color: rgb(211,211,211);
+  z-index: 44;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+
+
+
+.activity {
+    position: absolute;
+    left: -45%;
+    height: 100%;
+    width: 45%;
+    background-image: linear-gradient(to left, rgba(251,251,251, .05), rgba(251,251,251, .3), rgba(251,251,251, .6), rgba(251,251,251, .3), rgba(251,251,251, .05));
+    animation: loading 1s infinite;
+    z-index: 45;
+}
+
+
+  @keyframes loading {
+    0%{
+      left: -45%;
+    }
+    100%{
+      left: 100%;
+    }
+  }
+
+.title-placeholder {
+    overflow: hidden;
+    margin-left: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text-placeholder {
+    overflow: hidden;
+    background-color: rgb(211,211,211);
+    position:relative;
+    height: 25px;
+    width: 100px;
+    border-radius: 5px;
+}
+
+.btn-placeholder {
+    overflow: hidden;
+    background-color: rgb(211,211,211);
+    width: 122px;
+    height: 44px;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 5px;
+}

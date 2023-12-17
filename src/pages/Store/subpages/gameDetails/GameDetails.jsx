@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useGameDetails } from "../../../../hooks/useGameDetails";
 import GameBar from "./components/gameBar/GameBar";
 import "./gamedetails.css";
@@ -19,6 +19,8 @@ const GameDetails = () => {
   const handleImageError = (e) => {
     e.target.src = "/assets/tags/singleplayer.png";
   };
+
+
 
   if (isLoading) return <Loader />;
   return (

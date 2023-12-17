@@ -5,8 +5,11 @@ import { getCroppedImg } from "../../../../../../helpers/getCroppedImg";
 import Button from "../../../../../../components/buttons/Button"
 import { useGameContext } from "../../../../../../contexts/selectedGame";
 import { Link } from "react-router-dom";
+import { useCart } from "../../../../../../context/cartContext";
+import GamePlaceholder from "./components/gameplaceholder/GamePlaceholder";
 const BrowseContainer = ({ tab, selectedGenre, selectedPlatform, selectedDeveloper, selectedPublisher }) => {
   const {setSelectedGame} = useGameContext()
+  const {addToCart} = useCart()
   const [currentPage, setCurrentPage] = useState(1)
   const { data, isLoading, error } = useBrowseGames({
     genres: selectedGenre,
@@ -17,8 +20,23 @@ const BrowseContainer = ({ tab, selectedGenre, selectedPlatform, selectedDevelop
     currentPage: currentPage
   });
   const handlePage = (action) => {
-    if(action === "Next") return setCurrentPage(prev => prev + 1)
-    if(action === "Previous" && currentPage > 1) return setCurrentPage(prev => prev - 1)
+    if(action === "Next") {
+      setCurrentPage(prev => prev + 1)
+      
+    } 
+    if(action === "Previous" && currentPage > 1) {
+      setCurrentPage(prev => prev - 1)
+    }
+
+
+    const pageHeight = window.innerHeight;
+    const pos = (document.body.scrollHeight - pageHeight) * (20 / 100) 
+
+    window.scroll({
+      top:pos,
+      behavior: "smooth"
+    });
+   
   }
 
   useEffect(() => {
@@ -28,21 +46,35 @@ const BrowseContainer = ({ tab, selectedGenre, selectedPlatform, selectedDevelop
   const handlePlatformError = (e) => {
     e.target.src = "/assets/constants/question.png"
   }
-console.log(selectedPublisher)
+
+  const placeholders = [];
+
+  if (isLoading) {
+    for (let i = 0; i < 12; i++) {
+      placeholders.push(<GamePlaceholder key={i} />);
+    }
+  }
   
-  if (isLoading) return <p>Loading</p>;
+  
   if (error) return <p>Error</p>;
   return (
     <div className="browse-container">
-      {data?.map((game) => (
-        <Link to="/gameDetails" key={game.name}>
-          <div className="browse-game"  onClick={() => setSelectedGame(game.id)}>
+      {isLoading ? (
+        placeholders
+      ) : (
+        data?.map((game) => (
+       
+          <div className="browse-game" key={game.name}>
           <div className="browse-game-image">
+            <Link to="/gameDetails" onClick={() => setSelectedGame(game.id)}>
             <img src={getCroppedImg(game.background_image)} alt="game image" />
+            </Link>
           </div>
           <div className="browse-game-body">
             <div className="browse-game-meta">
+              <Link to="/gameDetails" onClick={() => setSelectedGame(game.id)}>
               <h4>{game.name}</h4>
+              </Link>
               <div className="tags-container">
                 {game.genres.map((genre) => (
                   <div className="tag" key={genre.name}>
@@ -95,7 +127,7 @@ console.log(selectedPublisher)
                           <div className="price">
                             <span>42.69$</span>
                           </div>
-                        <Button type="addtocart" text="Add to Cart" />
+                        <Button type="addtocart" text="Add to Cart" onBtnClick={() => addToCart(game)} />
                     </div>
 
 
@@ -103,8 +135,8 @@ console.log(selectedPublisher)
             </div>
           </div>
         </div>
-        </Link>
-      ))}
+      ))
+      )}
       <div className="page-selection">
       <button className={`${currentPage > 1 ? "selection-button" : "inactivePage"}`} onClick={() => handlePage("Previous")}>Previous</button>
        

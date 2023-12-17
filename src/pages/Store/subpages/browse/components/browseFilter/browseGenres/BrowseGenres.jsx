@@ -77,7 +77,7 @@ const BrowseGenres = ({genreSelected}) => {
               <div
               className="item"
              
-              onClick={() => handleGenreClick(genre.name)}
+              onClick={() => handleGenreClick(genre.slug)}
             >
               <span className="small">{genre.name}</span>
             </div>
@@ -88,7 +88,7 @@ const BrowseGenres = ({genreSelected}) => {
             <li  key={genre.name}>
               <div
               className="item"
-              onClick={() => handleGenreClick(genre.name)}
+              onClick={() => handleGenreClick(genre.slug)}
             >
               <span className="small">{genre.name}</span>
             </div>
