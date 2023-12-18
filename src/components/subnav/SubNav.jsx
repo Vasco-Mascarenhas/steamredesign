@@ -7,10 +7,6 @@ const SubNav = () => {
     { text: "Home", link: "/" },
     { text: "Browse", link: "/Browse" },
     { text: "Discover", link: "/Discover" },
-    { text: "Points Shop", link: "/Points" },
-    { text: "Curators", link: "/Curators" },
-    { text: "Gift Cards", link: "/Gift" },
-    { text: "News", link: "/News" },
   ];
 
   return (
@@ -32,7 +28,7 @@ const SubNav = () => {
         <ul>
           <li className="sublink">WishList</li>
           <NavLink to="Cart">
-          <li className="sublink">Cart</li>
+            <li className="sublink">Cart</li>
           </NavLink>
         </ul>
       </div>

@@ -12,7 +12,7 @@ const Featured = () => {
   const { setSelectedGame } = useGameContext();
   return (
     <Swiper
-      slidesPerView={3}
+      slidesPerView={1}
       spaceBetween={15}
       modules={[Autoplay, Pagination]}
       pagination={{
@@ -21,6 +21,17 @@ const Featured = () => {
       autoplay={{
         delay: 5000,
         disableOnInteraction: true,
+      }}
+      breakpoints={{
+        600: {
+          slidesPerView: 1.5,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        900: {
+          slidesPerView: 3,
+        },
       }}
       className="mySwiper"
     >

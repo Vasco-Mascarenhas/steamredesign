@@ -18,7 +18,7 @@ const Genres = () => {
 
   return (
     <Swiper
-      slidesPerView={5}
+      slidesPerView={1}
       spaceBetween={15}
       modules={[Autoplay, Pagination]}
       pagination={{
@@ -29,6 +29,23 @@ const Genres = () => {
         disableOnInteraction: true,
       }}
       loop
+      breakpoints={{
+        400: {
+          slidesPerView: 1.5,
+        },
+
+        600: {
+          slidesPerView: 2,
+        },
+
+        700: {
+          slidesPerView: 4,
+        },
+
+        1200: {
+          slidesPerView: 5,
+        },
+      }}
       className="mySwiper mySwiper-trending"
     >
       {isLoading ? (

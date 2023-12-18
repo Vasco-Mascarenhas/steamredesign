@@ -2,7 +2,6 @@
   display: flex;
   min-height: 55px;
   align-items: center;
-  justify-content: space-between;
 }
 
 .subnav ul {
@@ -20,6 +19,7 @@
 .sub-links a {
   color: white;
   text-decoration: none;
+  border-radius: 3px;
 }
 
 .sublink {
@@ -36,4 +36,24 @@
 .sub-search {
   width: 100%;
   max-width: 25%;
+}
+
+.subnav .cart {
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 700px) {
+  .sub-links {
+    display: none;
+  }
+
+  .sub-search {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .subnav {
+    display: none;
+  }
 }

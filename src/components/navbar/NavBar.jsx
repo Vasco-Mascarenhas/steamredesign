@@ -7,8 +7,6 @@ const NavBar = () => {
     { text: "store", link: "/" },
     { text: "community", link: "/community" },
     { text: "user", link: "/user" },
-    { text: "library", link: "/library" },
-    { text: "downloads", link: "/downloads" },
   ];
 
   return (

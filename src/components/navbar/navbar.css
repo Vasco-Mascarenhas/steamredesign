@@ -35,3 +35,24 @@
 .navbar .navlink:hover {
   color: var(--colorPrimary);
 }
+
+@media only screen and (max-width: 500px) {
+  .nav-logo {
+    width: 90px;
+  }
+
+  .nav-logo img {
+    width: 90px;
+  }
+
+  .navbar ul {
+    gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .navbar {
+    gap: 0;
+    justify-content: space-between;
+  }
+}
