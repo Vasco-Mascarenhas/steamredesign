@@ -30,3 +30,9 @@
 .steam_deck img {
   width: 100%;
 }
+
+@media only screen and (max-width: 800px) {
+  .home-hero {
+    background-size: cover;
+  }
+}

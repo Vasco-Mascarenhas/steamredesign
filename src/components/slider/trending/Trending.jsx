@@ -13,7 +13,7 @@ const Featured = () => {
   const { setSelectedGame } = useGameContext();
   return (
     <Swiper
-      slidesPerView={3}
+      slidesPerView={1}
       spaceBetween={30}
       modules={[Autoplay, Pagination]}
       pagination={{
@@ -24,6 +24,17 @@ const Featured = () => {
         disableOnInteraction: true,
       }}
       loop
+      breakpoints={{
+        600: {
+          slidesPerView: 1.5,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        900: {
+          slidesPerView: 3,
+        },
+      }}
       className="mySwiper"
     >
       {isLoading ? (
@@ -47,7 +58,7 @@ const Featured = () => {
                 </div>
                 <div className="trending-content">
                   <div className="platforms">
-                    {trending.platforms.map((platform) => (
+                    {trending.platforms.slice(0, 3).map((platform) => (
                       <div className="platform" key={platform.platform.name}>
                         <img
                           src={`/assets/platforms/${platform.platform.slug.toLowerCase()}.png`}
