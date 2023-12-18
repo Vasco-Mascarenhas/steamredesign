@@ -6,7 +6,7 @@ const NavBar = () => {
   const navlinks = [
     { text: "store", link: "/" },
     { text: "community", link: "/community" },
-    { text: "user", link: "/user" },
+    { text: "vasco", link: "/vasco" },
   ];
 
   return (
