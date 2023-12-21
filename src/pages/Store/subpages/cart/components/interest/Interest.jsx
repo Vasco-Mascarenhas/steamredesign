@@ -23,7 +23,7 @@ const Interest = ({game, onAddClick}) => {
         </div>
         <div className="interest-content">
         <div className="platforms">
-            {game.platforms.slice(0, 5).map(platform => (
+            {game.platforms.slice(0, 3).map(platform => (
                 <div className="platform" key={platform.platform.slug}>
                         <img src={`/assets/platforms/${platform.platform.slug}.png`} alt={platform.platform.name} />
                 </div>
