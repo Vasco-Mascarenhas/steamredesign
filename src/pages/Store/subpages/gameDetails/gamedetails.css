@@ -84,3 +84,39 @@
   margin-bottom: 0;
   color: var(--colorSecondary);
 }
+
+
+@media only screen and (max-width:1000px) {
+  .gamedetails-content {
+    flex-direction: column-reverse;
+  }
+  .gamedetails-aside {
+    flex-direction: row;
+    flex-wrap:wrap;
+  }
+
+  .gamedetails-aside .box {
+    width:49%;
+  }
+  .gamedetails-main {
+    width:100%;
+  }
+}
+
+@media only screen and (max-width:800px) {
+  .gamedetails-aside .box {
+    width:100%;
+  }
+}
+
+@media only screen and (max-width:650px) {
+  .gamedetails-main .gamedetails-dlc .game-price, .gamedetails-main .gamedetails-price .game-price{
+    flex-direction: column;
+    gap:10px;
+    text-align: center;
+  }
+
+  .gamedetails-main .game-price-details {
+    flex-direction: column;
+  }
+}

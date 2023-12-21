@@ -85,3 +85,13 @@
   background-color: var(--bgHighlight);
   border-radius: 3px;
 }
+
+@media only screen and (max-width:1000px) {
+  .gameintro-inner {
+    flex-direction: column-reverse;
+  }
+
+  .gameintro-slider {
+    width:100%;
+  }
+}

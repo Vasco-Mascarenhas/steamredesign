@@ -1,5 +1,6 @@
 .browsebar {
   width: 100%;
+  min-width:800px;
   background-color: var(--bgMain);
   min-height: 56px;
   border-radius: 5px;
@@ -9,26 +10,8 @@
   padding-inline: 15px;
   color: var(--textDim);
 }
-
-.view-toggle {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.view-selector {
-  align-items: center;
-  display: flex;
-  gap: 5px;
-}
-
-.view-selector > div {
-  display: flex;
-  align-items: center;
-}
-
-.view-selector svg {
-  width: 30px;
+.tab-selection {
+  width:100%;
 }
 
 .tab-selection .tabs {
@@ -63,4 +46,10 @@
 .tabs button.active {
   color: white;
   background-color: var(--bgHighlight);
+}
+
+@media only screen and (max-width:842px) {
+  .tabs {
+    justify-content: space-between;
+  }
 }

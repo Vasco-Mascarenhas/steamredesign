@@ -54,6 +54,7 @@
 
 .browse-game .ratings {
   margin-top:5px;
+  width:330px;
 }
 
 .browse-game-release {
@@ -89,6 +90,8 @@
   display:flex;
   align-items: center;
   gap:10px;
+  flex-wrap:wrap;
+  justify-content: center;
 }
 
 .browse-container .page-selection {
@@ -124,4 +127,51 @@
   cursor: pointer;
   border-radius: 3px;
   opacity:0.2;
+}
+
+
+@media only screen and (max-width:1100px) {
+  .browse-game {
+    flex-direction: column;
+    height:fit-content;
+  }
+
+  .browse-game-image {
+    max-width:initial;
+  }
+
+  .browse-container {
+    display:grid;
+    grid-template-columns: repeat( auto-fit, minmax(277px, 1fr) )
+  }
+
+  .browse-game-body {
+    flex-direction: column;
+    padding-left:0;
+  }
+
+  .browse-game-meta h4 {
+    margin-top:5px;
+    line-height: normal;
+}
+.browse-rating {
+  display:flex;
+  flex-direction: column;
+}
+  .browse-game .ratings {
+    width: 100%;
+    margin-top:0;
+    row-gap: 5px;
+    column-gap: 8%;
+    margin-bottom:5px;
+}
+
+.browse-game .ratings .rating{
+ width:initial;
+}
+
+.browse-game-cart {
+  width:100%;
+  flex-direction: row;
+}
 }

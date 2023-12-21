@@ -1,6 +1,8 @@
 #browse {
   background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(32, 43, 60) 30%, rgb(32, 43, 60) 100%), url("/assets/browse/background.png");
   padding-block: 50px;
+  background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #browse .swiper-pagination {
@@ -26,4 +28,20 @@
 
 .browse-games {
   width: 100%;
+}
+
+
+@media only screen and (max-width:842px) {
+  .browse-bar {
+    overflow-x:scroll;
+  }
+}
+
+@media only screen and (max-width:700px) {
+  .browse-filter {
+    max-width:initial;
+  }
+  .browse-game-container {
+    flex-direction: column;
+  }
 }

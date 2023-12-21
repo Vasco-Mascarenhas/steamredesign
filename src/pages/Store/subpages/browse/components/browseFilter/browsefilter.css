@@ -129,3 +129,44 @@
   color: var(--textDim);
   cursor: pointer;
 }
+.filter-mobile {
+  display:none;
+  width:100%;
+  background-color:var(--bgMain);
+  border-radius:5px;
+  padding: 5px;
+}
+
+.filter-mobile button {
+  display:flex;
+  align-items: center;
+  gap:10px;
+  background:transparent;
+  border:0;
+  outline:0;
+  color:var(--textMain);
+  font-weight:bold;
+}
+
+.filter-mobile img {
+  width:20px;
+}
+@media only screen and (max-width:700px) {
+  .filter-mobile {
+    display:flex;
+  }
+  .filter-open {
+    display:flex !important;
+  }
+  .browsefilter {
+    flex-wrap:wrap;
+    display:none;
+  }
+  .browsefilter h3.medium {
+    display:none;
+  }
+
+  .browsefilter input {
+    background-size:20px;
+  }
+}

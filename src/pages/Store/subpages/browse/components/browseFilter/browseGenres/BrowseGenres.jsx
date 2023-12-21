@@ -20,7 +20,7 @@ const BrowseGenres = ({genreSelected}) => {
       const handleRemoveGenre = (genre) => {
         const removeGenre = selectedGenre.filter((remove) => remove !== genre);
         setSelectedGenre(removeGenre);
-        genreSelected(removeGenre.map((r) => r.toLowerCase()));
+        genreSelected(removeGenre.map((r) => r.slug.toLowerCase()));
       };
     
       const handleGenreClick = (genre) => {
@@ -29,7 +29,7 @@ const BrowseGenres = ({genreSelected}) => {
         }
         const updatedGenres = [...selectedGenre, genre];
         setSelectedGenre(updatedGenres);
-        genreSelected(updatedGenres.map((g) => g.toLowerCase().replace(" ", "-")));
+        genreSelected(updatedGenres.map((g) => g.slug.toLowerCase().replace(" ", "-")));
       };
     
       const handleGenresMore = () => {
@@ -55,8 +55,8 @@ const BrowseGenres = ({genreSelected}) => {
       className={`selected-items ${selectedGenre === null ? "none" : ""}`}
     >
       {selectedGenre?.map((genre) => (
-        <button className="small" key={genre}>
-          {genre} <span onClick={() => handleRemoveGenre(genre)}>x</span>
+        <button className="small" key={genre.name}>
+          {genre.name} <span onClick={() => handleRemoveGenre(genre)}>x</span>
         </button>
       ))}
       {selectedGenre.length > 0 ? (
@@ -77,7 +77,7 @@ const BrowseGenres = ({genreSelected}) => {
               <div
               className="item"
              
-              onClick={() => handleGenreClick(genre.slug)}
+              onClick={() => handleGenreClick(genre)}
             >
               <span className="small">{genre.name}</span>
             </div>
@@ -88,7 +88,7 @@ const BrowseGenres = ({genreSelected}) => {
             <li  key={genre.name}>
               <div
               className="item"
-              onClick={() => handleGenreClick(genre.slug)}
+              onClick={() => handleGenreClick(genre)}
             >
               <span className="small">{genre.name}</span>
             </div>

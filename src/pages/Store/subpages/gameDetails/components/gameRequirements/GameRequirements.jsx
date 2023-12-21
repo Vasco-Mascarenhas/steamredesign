@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./gamerequirements.css";
-const GameRequirements = ({ game, platforms }) => {
+const GameRequirements = ({ game }) => {
   const [clicked, setClicked] = useState("PC");
-  console.log(clicked);
+  // gotta know a better way of displaying the platforms/requirements, for now just gonna force PC
   return (
     <div className="game-requirements">
       <div className="requirements-selection">
         <h3>System Requirements</h3>
         <div className="selection-buttons">
-          {game.slice(0, 3).map((req) => (
+          {game.filter(req => req.platform.name === "PC").map((req) => (
             <button
               key={req.platform.name}
               onClick={() => setClicked(req.platform.name)}
@@ -23,7 +23,7 @@ const GameRequirements = ({ game, platforms }) => {
       </div>
       <div className="game-requirements-content">
         {game
-          .filter((req) => req.platform.name === clicked)
+          .filter((req) => req.platform.name === "PC")
           .map((req, index) =>
             req.requirements && Object.keys(req.requirements).length > 0 ? (
               <div className="requirement" key={index}>
