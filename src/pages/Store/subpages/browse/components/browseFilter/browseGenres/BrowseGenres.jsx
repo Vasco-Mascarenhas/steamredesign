@@ -1,48 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { useGenres } from '../../../../../../../hooks/useGenres';
+import { useGenreContext } from '../../../../../../../contexts/selectedGenre';
 const BrowseGenres = ({genreSelected}) => {
     const { data: genres, isLoading, error } = useGenres();
-    const [searchedGenre, setSearchedGenre] = useState(null);
-  const [selectedGenre, setSelectedGenre] = useState([]);
-  const [genresMore, setGenresMore] = useState(null);
-    const handleGenreChange = (e) => {
-      const searched = e.target.value
-        setSearchedGenre(searched)
+    const {selectedGenre, handleGenreAdd, handleGenreRemove, handleGenreClear} = useGenreContext()
+    const [genresMore, setGenresMore] = useState(null)
+    const [searchedGenre, setSearchedGenre] = useState(null)
 
-        if(searched !== null && searched !== ""){
-          setGenresMore(true)
-        } else {
-          setGenresMore(false)
-        }
-       
+    const handleGenreChange = (e) => {
+        const searched = e.target.value;
+        setSearchedGenre(searched)
     }
-      const handleRemoveGenre = (genre) => {
-        const removeGenre = selectedGenre.filter((remove) => remove !== genre);
-        setSelectedGenre(removeGenre);
-        genreSelected(removeGenre.map((r) => r.slug.toLowerCase()));
-      };
-    
-      const handleGenreClick = (genre) => {
-        if (selectedGenre.includes(genre)) {
-          return;
-        }
-        const updatedGenres = [...selectedGenre, genre];
-        setSelectedGenre(updatedGenres);
-        genreSelected(updatedGenres.map((g) => g.slug.toLowerCase().replace(" ", "-")));
-      };
-    
-      const handleGenresMore = () => {
-        setGenresMore((prev) => !prev);
-      };
-    
-      const handleGenreClear = () => {
-        setSelectedGenre([]);
-        genreSelected([]);
-      };
+    console.log(selectedGenre)
+
+    const handleGenresMore = () => {
+      setGenresMore(prev => !prev)
+    }
+
+    useEffect(() => {
+      genreSelected(selectedGenre.map(genre => genre.slug))
+    }, [selectedGenre])
+      // WHEN YOU GET BACK, REMOVE ALL OF THIS SHIT AND MAKE IT ONLY USING THE GENRE CONTEXT. CLEANER BETTER EASIER AND YOU WONT LOOK LIKE A *REDACTED*
+
   return (
     <div className="browse-genres">
     <h4 className="large">Genres</h4>
+    
     <input
       type="text"
       name="genres"
@@ -51,12 +35,14 @@ const BrowseGenres = ({genreSelected}) => {
       onChange={handleGenreChange}
     />
     <hr />
-    <div
+    
+    
+  <div
       className={`selected-items ${selectedGenre === null ? "none" : ""}`}
     >
       {selectedGenre?.map((genre) => (
         <button className="small" key={genre.name}>
-          {genre.name} <span onClick={() => handleRemoveGenre(genre)}>x</span>
+          {genre.name} <span onClick={() => handleGenreRemove(genre)}>x</span>
         </button>
       ))}
       {selectedGenre.length > 0 ? (
@@ -68,6 +54,7 @@ const BrowseGenres = ({genreSelected}) => {
       )}
     </div>
     <div className="genres-list">
+      
       <ul className={genresMore ? "more-enabled" : "max-height"}>
         {isLoading ? (
           <p>Loading...</p>
@@ -77,7 +64,7 @@ const BrowseGenres = ({genreSelected}) => {
               <div
               className="item"
              
-              onClick={() => handleGenreClick(genre)}
+              onClick={() => handleGenreAdd(genre)}
             >
               <span className="small">{genre.name}</span>
             </div>
@@ -88,7 +75,7 @@ const BrowseGenres = ({genreSelected}) => {
             <li  key={genre.name}>
               <div
               className="item"
-              onClick={() => handleGenreClick(genre)}
+              onClick={() => handleGenreAdd(genre)}
             >
               <span className="small">{genre.name}</span>
             </div>
@@ -97,7 +84,9 @@ const BrowseGenres = ({genreSelected}) => {
         )}
       </ul>
       <div className="genres-see">
-        {genresMore ? (
+      
+        
+      {genresMore ? (
           <button className="more-button small" onClick={handleGenresMore}>
             See Less
           </button>

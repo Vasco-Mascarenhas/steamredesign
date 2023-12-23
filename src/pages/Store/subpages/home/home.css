@@ -1,6 +1,6 @@
 #home {
   padding-bottom: 50px;
-  background-image: url("/assets/home/leaves.gif");
+  background-image: url("/assets/home/bricks.gif");
 }
 #home h2 {
   font-size: 24px;
@@ -8,7 +8,7 @@
 }
 
 .home-hero {
-  background-image: url("/assets/home/hero_autumn.gif");
+  background-image: url("/assets/home/hero_winter.gif");
   min-height: 75vh;
   background-size: contain;
   background-repeat: no-repeat;

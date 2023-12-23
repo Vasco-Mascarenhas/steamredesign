@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./cart.css"
-import { useCart } from '../../../../context/cartContext'
+import { useCart } from '../../../../contexts/cartContext'
 import { getCroppedImg } from '../../../../helpers/getCroppedImg'
 import { Button } from '../../../../components'
 import { useInterestIn } from '../../../../hooks/useInterestIn'

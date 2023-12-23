@@ -1,7 +1,7 @@
 import React from "react";
 import "./gameprice.css";
 import { Button } from "../../../../../../components";
-import { useCart } from "../../../../../../context/cartContext";
+import { useCart } from "../../../../../../contexts/cartContext";
 const GamePrice = ({ game, platforms }) => {
   const {addToCart} = useCart()
   return (

@@ -3,16 +3,18 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Store from "./pages/Store/Store";
 import Vasco from "./pages/vasco/Vasco";
 import { Browse, GameDetails, Home, Cart } from "./pages/Store/subpages";
-import { CartProvider } from "./context/cartContext";
+import { CartProvider } from "./contexts/cartContext";
 import { SelectedGameProvider } from "./contexts/selectedGame";
 import { Slide, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { SelectedGenreProvider } from "./contexts/selectedGenre";
 function App() {
   return (
     <>
       <BrowserRouter>
         <ScrollTop />
         <CartProvider>
+          <SelectedGenreProvider>
         <SelectedGameProvider>
           <Layout>
             <Routes>
@@ -38,6 +40,7 @@ function App() {
             />
           </Layout>
         </SelectedGameProvider>
+        </SelectedGenreProvider>
         </CartProvider>
         
       </BrowserRouter>

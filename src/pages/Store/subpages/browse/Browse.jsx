@@ -39,7 +39,6 @@ const Browse = () => {
     {text: "Coming Soon", value:"-released"}
   ]
 
-  console.log(selectedDeveloper)
 
   const ordering = tabs?.find(tabz =>  {
     if(tabz.text === selectedTab) {

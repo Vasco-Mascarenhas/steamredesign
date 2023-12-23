@@ -1,12 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 const ScrollTop = () => {
   const location = useLocation();
+  const prevLocation = useRef();
 
   useEffect(() => {
-    // Scroll to the top of the page when the route changes
-    window.scrollTo(0, 0);
+    // Check if the location has changed before scrolling to the top
+    if (prevLocation.current !== location.pathname) {
+      window.scrollTo(0, 0);
+    }
+
+    // Update the previous location
+    prevLocation.current = location.pathname;
   }, [location]);
 
   return null;

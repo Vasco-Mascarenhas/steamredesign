@@ -5,7 +5,7 @@ import { getCroppedImg } from "../../../../../../helpers/getCroppedImg";
 import Button from "../../../../../../components/buttons/Button"
 import { useGameContext } from "../../../../../../contexts/selectedGame";
 import { Link } from "react-router-dom";
-import { useCart } from "../../../../../../context/cartContext";
+import { useCart } from "../../../../../../contexts/cartContext";
 import GamePlaceholder from "./components/gameplaceholder/GamePlaceholder";
 const BrowseContainer = ({ tab, selectedGenre, selectedPlatform, selectedDeveloper, selectedPublisher }) => {
   const {setSelectedGame} = useGameContext()
