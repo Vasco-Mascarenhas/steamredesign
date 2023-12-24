@@ -6,47 +6,30 @@ import BrowseContainer from "./components/browseContainer/BrowseContainer";
 import BrowseFilter from "./components/browseFilter/BrowseFilter";
 const Browse = () => {
   const [selectedTab, setSelectedTab] = useState(null);
-  const [selectedGenre, setSelectedGenre] = useState(null);
-  const [selectedPlatform, setSelectedPlatform] = useState(null)
-  const [selectedDeveloper, setSelectedDeveloper] = useState(null)
-  const [selectedPublisher, setSelectedPublisher] = useState(null)
+  const [selectedPlatform, setSelectedPlatform] = useState(null);
   const handleSelectedTab = (tab) => {
     setSelectedTab(tab);
   };
 
-  const handleGenreSelection = (genre) => {
-    setSelectedGenre(genre);
+  const handlePlatformSelection = (platform) => {
+    setSelectedPlatform(platform);
   };
 
-  const handlePlatformSelection = (platform) => {
-      setSelectedPlatform(platform)
-  }
-
-  const handleDeveloperSelection = (developer) => {
-    setSelectedDeveloper(developer)
-  }
-
-  const handlePublisherSelection = (publisher) => {
-      setSelectedPublisher(publisher)
-  }
-
   const tabs = [
-    {text: "All Items", value: "-metacritic"},
-    {text: "New and Trending", value:"released"},
-    {text: "Top Sellers", value:"updated"},
-    {text: "Top Rated", value: "-rating"},
-    {text: "Popular", value: "popular"},
-    {text: "Coming Soon", value:"-released"}
-  ]
+    { text: "All Items", value: "-metacritic" },
+    { text: "New and Trending", value: "released" },
+    { text: "Top Sellers", value: "updated" },
+    { text: "Top Rated", value: "-rating" },
+    { text: "Popular", value: "popular" },
+    { text: "Coming Soon", value: "-released" },
+  ];
 
-
-  const ordering = tabs?.find(tabz =>  {
-    if(tabz.text === selectedTab) {
-     return tabz
+  const ordering = tabs?.find((tabz) => {
+    if (tabz.text === selectedTab) {
+      return tabz;
     }
-  })
+  });
 
-  
   return (
     <div id="browse">
       <div className="browse-inner inner-container">
@@ -61,20 +44,12 @@ const Browse = () => {
           </div>
           <div className="browse-game-container">
             <aside className="browse-filter">
-              <BrowseFilter
-               genreSelected={handleGenreSelection}
-              platformSelected={handlePlatformSelection}  
-              developerSelected={handleDeveloperSelection}
-              publisherSelected={handlePublisherSelection}
-              />
+              <BrowseFilter platformSelected={handlePlatformSelection} />
             </aside>
             <div className="browse-games">
               <BrowseContainer
                 tab={ordering}
-                selectedGenre={selectedGenre}
                 selectedPlatform={selectedPlatform}
-                selectedDeveloper={selectedDeveloper}
-                selectedPublisher={selectedPublisher}
               />
             </div>
           </div>

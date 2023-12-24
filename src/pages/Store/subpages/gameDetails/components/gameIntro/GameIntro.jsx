@@ -2,7 +2,12 @@ import React from "react";
 import "./gameintro.css";
 import GameSlider from "../gameSlider/GameSlider";
 import { getCroppedImg } from "../../../../../../helpers/getCroppedImg";
+import { useDeveloperContext } from "../../../../../../contexts/selectedDeveloper";
+import { Link } from "react-router-dom";
+import { usePublisherContext } from "../../../../../../contexts/selectedPublisher";
 const GameIntro = ({ game }) => {
+  const { handleDeveloperAdd } = useDeveloperContext();
+  const { handlePublisherAdd } = usePublisherContext();
   return (
     <div className="gameintro-inner">
       <div className="gameintro-slider">
@@ -45,13 +50,25 @@ const GameIntro = ({ game }) => {
         <div className="gameintro-developer">
           <span>Developer</span>
           {game.developers.map((developer, index) => (
-            <h4 key={developer.name + index}>{developer.name}</h4>
+            <Link
+              to="/Browse"
+              key={developer.name + index}
+              onClick={() => handleDeveloperAdd(developer)}
+            >
+              <h4>{developer.name}</h4>
+            </Link>
           ))}
         </div>
         <div className="gameintro-publisher">
           <span>Publisher</span>
           {game.publishers.map((publisher, index) => (
-            <h4 key={publisher.name + index}>{publisher.name}</h4>
+            <Link
+              to="/Browse"
+              key={publisher.name + index}
+              onClick={() => handlePublisherAdd(publisher)}
+            >
+              <h4>{publisher.name}</h4>
+            </Link>
           ))}
         </div>
         <div className="gameintro-tags">
